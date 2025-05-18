@@ -3,7 +3,7 @@
 
 FOOD* food_list = NULL;
 
-int is_position_occupied(SEGM* snake, int x, int y) {
+int is_position_occupied(SNAKE* snake, int x, int y) {
     while (snake) {
         if (snake->coord_x == x && snake->coord_y == y)
             return 1;
@@ -16,7 +16,7 @@ int is_position_occupied(SEGM* snake, int x, int y) {
     return 0;
 }
 
-void spawn_food_1p(SEGM* snake, int* x, int* y) {
+void spawn_food_1p(SNAKE* snake, int* x, int* y) {
     do {
         *x = rand() % 20;
         *y = rand() % 20;
@@ -30,7 +30,7 @@ void spawn_food_1p(SEGM* snake, int* x, int* y) {
     food_list = f;
 }
 
-void spawn_food_2p(SEGM* snake, int* x, int* y) {
+void spawn_food_2p(SNAKE* snake, int* x, int* y) {
     do {
         *x = rand() % 20;
         *y = rand() % 20;
@@ -84,7 +84,7 @@ void spawn_food_random_points(SNAKE* snake) {
 }
 
 
-void generate_food(SEGM* snake) {
+void generate_food(SNAKE* snake) {
     static time_t last_spawn_time = 0;
     time_t current_time = time(NULL);
 

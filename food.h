@@ -21,12 +21,12 @@ typedef struct food_node {
 } FOOD;
 
 
-void spawn_food_1p(SEGM* snake, int* x, int* y);
-void spawn_food_2p(SEGM* snake, int* x, int* y);
-int is_position_occupied(SEGM* snake, int x, int y);
+void spawn_food_1p(SNAKE* snake, int* x, int* y);
+void spawn_food_2p(SNAKE* snake, int* x, int* y);
+int is_position_occupied(SNAKE* snake, int x, int y);
 int check_food(int x, int y, int* grow_value);
-void spawn_food_random_points(SEGM* snake);
-void generate_food(SEGM* snake);
+void spawn_food_random_points(SNAKE* snake);
+void generate_food(SNAKE* snake);
 void draw_food();   
 
 #endif
