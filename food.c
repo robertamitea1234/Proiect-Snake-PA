@@ -1,6 +1,8 @@
 
 #include "food.h"
 
+FOOD* food_list = NULL;
+
 int is_position_occupied(SEGM* snake, int x, int y) {
     while (snake) {
         if (snake->coord_x == x && snake->coord_y == y)
@@ -82,7 +84,7 @@ void spawn_food_random_points(SEGM* snake) {
 }
 
 
-void spawn_food(SEGM* snake) {
+void generate_food(SEGM* snake) {
     static time_t last_spawn_time = 0;
     time_t current_time = time(NULL);
 

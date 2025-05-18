@@ -1,6 +1,7 @@
-#ifndef GAME_H
-#define GAME_H
+#ifndef FOOD_H
+#define FOOD_H
 
+#include "snake.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -11,21 +12,21 @@ typedef enum {
     FOOD_2P = 3,
 } FOOD_TYPE;
 
+extern FOOD* food_list;
+
 typedef struct food_node {
     int x, y;
     FOOD_TYPE type;
     struct food_node* next; 
 } FOOD;
 
-FOOD* food_list = NULL;
 
 void spawn_food_1p(SEGM* snake, int* x, int* y);
 void spawn_food_2p(SEGM* snake, int* x, int* y);
-void spawn_food_minus1p(SEGM* snake, int* x, int* y);
 int is_position_occupied(SEGM* snake, int x, int y);
 int check_food(int x, int y, int* grow_value);
 void spawn_food_random_points(SEGM* snake);
-void spawn_food(SEGM* snake);
+void generate_food(SEGM* snake);
 void draw_food();   
 
 #endif
