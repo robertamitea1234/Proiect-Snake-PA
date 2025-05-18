@@ -69,7 +69,7 @@ int check_food(int x, int y, int* grow_value) {
     return 0;
 }
 
-void spawn_food_random_points(SEGM* snake) {
+void spawn_food_random_points(SNAKE* snake) {
     int x, y;
     int random = rand() % 2 + 1;
     switch (random) {

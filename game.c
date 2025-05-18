@@ -43,7 +43,7 @@ void update_game(SNAKE *snake, int *score, GAME_STATE *state, int *food_x, int *
             //validate the player's answer
             int result = validate_answer(player_answer, correct_answer);
             apply_question_result(snake, score, result);
-            generate_food(snake, food_x, food_y);
+            generate_food(snake);
             *state = STATE_RUNNING;
         }
 
